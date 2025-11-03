@@ -21,7 +21,7 @@ jobs:
       - name: installdeps
         run: npm install
       - name: build site
-        id : build step
+        id : build-step
         run: |
           npm run build
           if [-f dist/index.html]; then echo "dist=true" >> $GITHUB_OUTPUT; else echo "dist=false" >> $GITHUB_OUTPUT; fi
