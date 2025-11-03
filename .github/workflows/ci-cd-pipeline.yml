@@ -11,6 +11,8 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
+    outputs: 
+       dist_created: ${{ steps.build-step.outputs.dist_created }}
 
     steps:
       - uses: actions/checkout@v4
@@ -44,7 +46,7 @@ jobs:
               password: ${{ secrets.DOCKER_PASSWORD}}
           - name: build image
             run: |
-               docker build -t ${{secrets.DOCKER_USERNAME}} / ci-cd-demo:latest .
+               docker build -t ${{secrets.DOCKER_USERNAME}}/ci-cd-demo:latest .
 
           - name: push image
             run: |
