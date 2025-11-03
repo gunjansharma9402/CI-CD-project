@@ -24,10 +24,19 @@ jobs:
         id : build-step
         run: |
           npm run build
+<<<<<<< HEAD
           if [-f dist/index.html]; then
             echo "dist=true" >> $GITHUB_OUTPUT
             else echo "dist=false" >> $GITHUB_OUTPUT
             fi
+=======
+          if [-f dist/index.html]; then 
+            echo "dist=true" >> $GITHUB_OUTPUT
+          else 
+            echo "dist=false" >> $GITHUB_OUTPUT 
+
+          fi
+>>>>>>> 1392655 ( changed ci-cd pipeline)
 
   docker_build_push: 
          name: docker build & push
