@@ -23,12 +23,12 @@ jobs:
       - name: build site
         id : build-step
         run: |
-          npm run build
-          if [-f dist/index.html]; then 
-            echo "dist=true" >> $GITHUB_OUTPUT
-          else 
-            echo "dist=false" >> $GITHUB_OUTPUT 
-          fi
+         npm run build
+         if [ -f dist/index.html ]; then
+           echo "dist_created=true" >> $GITHUB_OUTPUT
+         else
+            echo "dist_created=false" >> $GITHUB_OUTPUT
+         fi
 
   docker_build_push: 
          name: docker build & push
